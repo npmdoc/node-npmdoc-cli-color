@@ -1,9 +1,14 @@
-# api documentation for  [cli-color (v1.2.0)](https://github.com/medikoo/cli-color#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-cli-color.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-cli-color) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-cli-color.svg)](https://travis-ci.org/npmdoc/node-npmdoc-cli-color)
+# npmdoc-cli-color
+
+#### api documentation for  [cli-color (v1.2.0)](https://github.com/medikoo/cli-color#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-cli-color.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-cli-color) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-cli-color.svg)](https://travis-ci.org/npmdoc/node-npmdoc-cli-color)
+
 #### Colors, formatting and other tools for the console
 
 [![NPM](https://nodei.co/npm/cli-color.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/cli-color)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-cli-color/build/screenCapture.buildCi.browser.apidoc.html.png)](https://npmdoc.github.io/node-npmdoc-cli-color/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-cli-color/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-cli-color/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-cli-color/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-cli-color/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-cli-color/build/screenCapture.npmPackageListing.svg)
 
@@ -72,53 +77,9 @@
         "lint-console": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --watch",
         "test": "node ./node_modules/tad/bin/tad"
     },
-    "version": "1.2.0"
+    "version": "1.2.0",
+    "bin": {}
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module cli-color](#apidoc.module.cli-color)
-1.  [function <span class="apidocSignatureSpan"></span>cli-color ()](#apidoc.element.cli-color.cli-color)
-1.  [function <span class="apidocSignatureSpan">cli-color.</span>toString ()](#apidoc.element.cli-color.toString)
-
-
-
-# <a name="apidoc.module.cli-color"></a>[module cli-color](#apidoc.module.cli-color)
-
-#### <a name="apidoc.element.cli-color.cli-color"></a>[function <span class="apidocSignatureSpan"></span>cli-color ()](#apidoc.element.cli-color.cli-color)
-- description and source-code
-```javascript
-function self() {
-		var start = '', end = '', msg = join.call(arguments, ' '), conf = self._cliColorData
-		  , hasAnsi = sgr.hasCSI(msg);
-		forEach(conf, function (mod, key) {
-			end    = sgr(mod[1]) + end;
-			start += sgr(mod[0]);
-			if (hasAnsi) {
-				msg = msg.replace(getEndRe(mod[1]), variantModes[key] ? sgr(mod[0]) : '');
-			}
-		}, null, true);
-		return start + msg + end;
-	}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.cli-color.toString"></a>[function <span class="apidocSignatureSpan">cli-color.</span>toString ()](#apidoc.element.cli-color.toString)
-- description and source-code
-```javascript
-toString = function () {
-    return toString;
-}
-```
-- example usage
-```shell
-n/a
 ```
 
 
