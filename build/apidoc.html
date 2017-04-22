@@ -72,10 +72,101 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.cli-color.toString">
-            function <span class="apidocSignatureSpan">cli-color.</span>toString
-            <span class="apidocSignatureSpan">()</span>
+            <a class="apidocElementLiA" href="#apidoc.element.cli-color.sgr">
+            function <span class="apidocSignatureSpan">cli-color.</span>sgr
+            <span class="apidocSignatureSpan">(code)</span>
             </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cli-color.sgr">module cli-color.sgr</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cli-color.sgr.sgr">
+            function <span class="apidocSignatureSpan">cli-color.</span>sgr
+            <span class="apidocSignatureSpan">(code)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cli-color.sgr.closeStyle">
+            function <span class="apidocSignatureSpan">cli-color.sgr.</span>closeStyle
+            <span class="apidocSignatureSpan">(mods, code)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cli-color.sgr.complete">
+            function <span class="apidocSignatureSpan">cli-color.sgr.</span>complete
+            <span class="apidocSignatureSpan">(mods, closerCodes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cli-color.sgr.extractCode">
+            function <span class="apidocSignatureSpan">cli-color.sgr.</span>extractCode
+            <span class="apidocSignatureSpan">(csi)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cli-color.sgr.hasCSI">
+            function <span class="apidocSignatureSpan">cli-color.sgr.</span>hasCSI
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cli-color.sgr.openStyle">
+            function <span class="apidocSignatureSpan">cli-color.sgr.</span>openStyle
+            <span class="apidocSignatureSpan">(mods, code)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cli-color.sgr.prepend">
+            function <span class="apidocSignatureSpan">cli-color.sgr.</span>prepend
+            <span class="apidocSignatureSpan">(mods)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cli-color.sgr.</span>closers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cli-color.sgr.</span>mods</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cli-color.sgr.</span>openers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cli-color.sgr.</span>CSI</span>
 
         </li>
 
@@ -112,17 +203,252 @@
 
 
     <h2>
-        <a href="#apidoc.element.cli-color.toString" id="apidoc.element.cli-color.toString">
-        function <span class="apidocSignatureSpan">cli-color.</span>toString
-        <span class="apidocSignatureSpan">()</span>
+        <a href="#apidoc.element.cli-color.sgr" id="apidoc.element.cli-color.sgr">
+        function <span class="apidocSignatureSpan">cli-color.</span>sgr
+        <span class="apidocSignatureSpan">(code)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return toString;
+    <li>description and source-code<pre class="apidocCodePre">sgr = function (code) {
+	return CSI + code + &#x27;m&#x27;;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cli-color.sgr" id="apidoc.module.cli-color.sgr">module cli-color.sgr</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cli-color.sgr.sgr" id="apidoc.element.cli-color.sgr.sgr">
+        function <span class="apidocSignatureSpan">cli-color.</span>sgr
+        <span class="apidocSignatureSpan">(code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sgr = function (code) {
+	return CSI + code + &#x27;m&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cli-color.sgr.closeStyle" id="apidoc.element.cli-color.sgr.closeStyle">
+        function <span class="apidocSignatureSpan">cli-color.sgr.</span>closeStyle
+        <span class="apidocSignatureSpan">(mods, code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">closeStyle = function (mods, code) {
+	forEachRight.call(mods, function (modPair, index) {
+		if (modPair[1] === code) {
+			mods.splice(index, 1);
+		}
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			var code = sgr.extractCode(chunk.token);
+
+			if (index &#x3c;= begin) {
+				if (code in sgr.openers) {
+					sgr.openStyle(state.preOpeners, code);
+				}
+				if (code in sgr.closers) {
+					sgr.<span class="apidocCodeKeywordSpan">closeStyle</span>(state.preOpeners, code);
+				}
+			} else if (index &#x3c; end) {
+				if (code in sgr.openers) {
+					sgr.openStyle(state.inOpeners, code);
+					state.seq.push(chunk);
+				} else if (code in sgr.closers) {
+					state.inClosers.push(code);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cli-color.sgr.complete" id="apidoc.element.cli-color.sgr.complete">
+        function <span class="apidocSignatureSpan">cli-color.sgr.</span>complete
+        <span class="apidocSignatureSpan">(mods, closerCodes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">complete = function (mods, closerCodes) {
+	closerCodes.forEach(function (code) {
+		sgr.closeStyle(mods, code);
+	});
+
+	// mods must be closed from the last opened to first opened
+	mods = mods.reverse();
+
+	mods = mods.map(function (modPair, key) {
+		return modPair[1];
+	});
+
+	// one closer can close many openers (31, 32 -&#x3e; 39)
+	mods = uniq.call(mods);
+
+	return mods.map(sgr);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		// closer CSIs for determining which pre/in-Openers must be closed
+		inClosers:  []
+	});
+
+	sliced.seq = [].concat(
+		sgr.prepend(sliced.preOpeners),
+		sliced.seq,
+		sgr.<span class="apidocCodeKeywordSpan">complete</span>([].concat(sliced.preOpeners, sliced.inOpeners), sliced.inClosers)
+	);
+
+	return sliced.seq;
+};
+
+module.exports = function (str/*, begin, end*/) {
+	var seq, begin = Number(arguments[1]), end = Number(arguments[2]), len;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cli-color.sgr.extractCode" id="apidoc.element.cli-color.sgr.extractCode">
+        function <span class="apidocSignatureSpan">cli-color.sgr.</span>extractCode
+        <span class="apidocSignatureSpan">(csi)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extractCode = function (csi) {
+	var code = csi.slice(2, -1);
+	code = Number(code);
+	return code;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+				nextChunk = chunk.slice(relBegin, relEnd);
+			}
+
+			state.seq.push(nextChunk);
+			state.index = index + chunk.length;
+		} else {
+			var code = sgr.<span class="apidocCodeKeywordSpan">extractCode</span>(chunk.token);
+
+			if (index &#x3c;= begin) {
+				if (code in sgr.openers) {
+					sgr.openStyle(state.preOpeners, code);
+				}
+				if (code in sgr.closers) {
+					sgr.closeStyle(state.preOpeners, code);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cli-color.sgr.hasCSI" id="apidoc.element.cli-color.sgr.hasCSI">
+        function <span class="apidocSignatureSpan">cli-color.sgr.</span>hasCSI
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasCSI = function (str) {
+	return includes.call(str, CSI);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}, { primitive: true });
+
+if (process.platform === &#x27;win32&#x27;) xtermMatch = require(&#x27;./lib/xterm-match&#x27;);
+
+getFn = function () {
+	return setPrototypeOf(function self(/*…msg*/) {
+		var start = &#x27;&#x27;, end = &#x27;&#x27;, msg = join.call(arguments, &#x27; &#x27;), conf = self._cliColorData
+		  , hasAnsi = sgr.<span class="apidocCodeKeywordSpan">hasCSI</span>(msg);
+		forEach(conf, function (mod, key) {
+			end    = sgr(mod[1]) + end;
+			start += sgr(mod[0]);
+			if (hasAnsi) {
+				msg = msg.replace(getEndRe(mod[1]), variantModes[key] ? sgr(mod[0]) : &#x27;&#x27;);
+			}
+		}, null, true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cli-color.sgr.openStyle" id="apidoc.element.cli-color.sgr.openStyle">
+        function <span class="apidocSignatureSpan">cli-color.sgr.</span>openStyle
+        <span class="apidocSignatureSpan">(mods, code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">openStyle = function (mods, code) {
+	mods.push(sgr.openers[code]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			state.seq.push(nextChunk);
+			state.index = index + chunk.length;
+		} else {
+			var code = sgr.extractCode(chunk.token);
+
+			if (index &#x3c;= begin) {
+				if (code in sgr.openers) {
+					sgr.<span class="apidocCodeKeywordSpan">openStyle</span>(state.preOpeners, code);
+				}
+				if (code in sgr.closers) {
+					sgr.closeStyle(state.preOpeners, code);
+				}
+			} else if (index &#x3c; end) {
+				if (code in sgr.openers) {
+					sgr.openStyle(state.inOpeners, code);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cli-color.sgr.prepend" id="apidoc.element.cli-color.sgr.prepend">
+        function <span class="apidocSignatureSpan">cli-color.sgr.</span>prepend
+        <span class="apidocSignatureSpan">(mods)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepend = function (mods) {
+	return mods.map(function (modPair, key) {
+		return sgr(modPair[0]);
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+		// inClosers -&#x3e; [ code ]
+		// closer CSIs for determining which pre/in-Openers must be closed
+		inClosers:  []
+	});
+
+	sliced.seq = [].concat(
+		sgr.<span class="apidocCodeKeywordSpan">prepend</span>(sliced.preOpeners),
+		sliced.seq,
+		sgr.complete([].concat(sliced.preOpeners, sliced.inOpeners), sliced.inClosers)
+	);
+
+	return sliced.seq;
+};
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
 
 
 </div>

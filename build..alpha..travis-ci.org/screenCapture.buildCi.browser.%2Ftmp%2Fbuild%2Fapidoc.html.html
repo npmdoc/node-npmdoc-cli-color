@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/medikoo/cli-color#readme"
-
-    >cli-color (v1.2.0)</a>
+    <a href="https://github.com/medikoo/cli-color#readme">cli-color (v1.2.0)</a>
 </h1>
 <h4>Colors, formatting and other tools for the console</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.cli-color">module cli-color</a><ol>
 
@@ -186,13 +179,13 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function self() {
-		var start = &#x27;&#x27;, end = &#x27;&#x27;, msg = join.call(arguments, &#x27; &#x27;), conf = self._cliColorData
+		var start = '', end = '', msg = join.call(arguments, ' '), conf = self._cliColorData
 		  , hasAnsi = sgr.hasCSI(msg);
 		forEach(conf, function (mod, key) {
 			end    = sgr(mod[1]) + end;
 			start += sgr(mod[0]);
 			if (hasAnsi) {
-				msg = msg.replace(getEndRe(mod[1]), variantModes[key] ? sgr(mod[0]) : &#x27;&#x27;);
+				msg = msg.replace(getEndRe(mod[1]), variantModes[key] ? sgr(mod[0]) : '');
 			}
 		}, null, true);
 		return start + msg + end;
@@ -210,7 +203,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">sgr = function (code) {
-	return CSI + code + &#x27;m&#x27;;
+	return CSI + code + 'm';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -230,7 +223,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">sgr = function (code) {
-	return CSI + code + &#x27;m&#x27;;
+	return CSI + code + 'm';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -254,14 +247,14 @@
     <li>example usage<pre class="apidocCodePre">...
 			var code = sgr.extractCode(chunk.token);
 
-			if (index &#x3c;= begin) {
+			if (index &lt;= begin) {
 				if (code in sgr.openers) {
 					sgr.openStyle(state.preOpeners, code);
 				}
 				if (code in sgr.closers) {
 					sgr.<span class="apidocCodeKeywordSpan">closeStyle</span>(state.preOpeners, code);
 				}
-			} else if (index &#x3c; end) {
+			} else if (index &lt; end) {
 				if (code in sgr.openers) {
 					sgr.openStyle(state.inOpeners, code);
 					state.seq.push(chunk);
@@ -291,7 +284,7 @@
 		return modPair[1];
 	});
 
-	// one closer can close many openers (31, 32 -&#x3e; 39)
+	// one closer can close many openers (31, 32 -&gt; 39)
 	mods = uniq.call(mods);
 
 	return mods.map(sgr);
@@ -339,7 +332,7 @@ module.exports = function (str/*, begin, end*/) {
 		} else {
 			var code = sgr.<span class="apidocCodeKeywordSpan">extractCode</span>(chunk.token);
 
-			if (index &#x3c;= begin) {
+			if (index &lt;= begin) {
 				if (code in sgr.openers) {
 					sgr.openStyle(state.preOpeners, code);
 				}
@@ -363,17 +356,17 @@ module.exports = function (str/*, begin, end*/) {
     <li>example usage<pre class="apidocCodePre">...
 }, { primitive: true });
 
-if (process.platform === &#x27;win32&#x27;) xtermMatch = require(&#x27;./lib/xterm-match&#x27;);
+if (process.platform === 'win32') xtermMatch = require('./lib/xterm-match');
 
 getFn = function () {
-	return setPrototypeOf(function self(/*…msg*/) {
-		var start = &#x27;&#x27;, end = &#x27;&#x27;, msg = join.call(arguments, &#x27; &#x27;), conf = self._cliColorData
+	return setPrototypeOf(function self(/*â€¦msg*/) {
+		var start = '', end = '', msg = join.call(arguments, ' '), conf = self._cliColorData
 		  , hasAnsi = sgr.<span class="apidocCodeKeywordSpan">hasCSI</span>(msg);
 		forEach(conf, function (mod, key) {
 			end    = sgr(mod[1]) + end;
 			start += sgr(mod[0]);
 			if (hasAnsi) {
-				msg = msg.replace(getEndRe(mod[1]), variantModes[key] ? sgr(mod[0]) : &#x27;&#x27;);
+				msg = msg.replace(getEndRe(mod[1]), variantModes[key] ? sgr(mod[0]) : '');
 			}
 		}, null, true);
 ...</pre></li>
@@ -397,14 +390,14 @@ getFn = function () {
 		} else {
 			var code = sgr.extractCode(chunk.token);
 
-			if (index &#x3c;= begin) {
+			if (index &lt;= begin) {
 				if (code in sgr.openers) {
 					sgr.<span class="apidocCodeKeywordSpan">openStyle</span>(state.preOpeners, code);
 				}
 				if (code in sgr.closers) {
 					sgr.closeStyle(state.preOpeners, code);
 				}
-			} else if (index &#x3c; end) {
+			} else if (index &lt; end) {
 				if (code in sgr.openers) {
 					sgr.openStyle(state.inOpeners, code);
 ...</pre></li>
@@ -426,7 +419,7 @@ getFn = function () {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-		// inClosers -&#x3e; [ code ]
+		// inClosers -&gt; [ code ]
 		// closer CSIs for determining which pre/in-Openers must be closed
 		inClosers:  []
 	});
@@ -459,3 +452,4 @@ getFn = function () {
     ]
 </div>
 </div>
+</body></html>
